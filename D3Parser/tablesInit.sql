@@ -221,53 +221,53 @@ encodingType TEXT(255) DEFAULT NULL,
 PRIMARY KEY (rawAttributeID)
 );
 
-DROP TABLE IF EXISTS itemAttribute;
-CREATE TABLE itemAttribute (
-itemHash INTEGER NOT NULL,
-attributeID INTEGER NOT NULL,
-PRIMARY KEY (itemHash, attributeID)
-);
+--DROP TABLE IF EXISTS itemAttribute;
+--CREATE TABLE itemAttribute (
+--itemHash INTEGER NOT NULL,
+--attributeID INTEGER NOT NULL,
+--PRIMARY KEY (itemHash, attributeID)
+--);
 
-DROP TABLE IF EXISTS affixAttribute;
-CREATE TABLE affixAttribute (
-affixHash INTEGER NOT NULL,
-attributeID INTEGER NOT NULL,
-PRIMARY KEY (affixHash, attributeID)
-);
+--DROP TABLE IF EXISTS affixAttribute;
+--CREATE TABLE affixAttribute (
+--affixHash INTEGER NOT NULL,
+--attributeID INTEGER NOT NULL,
+--PRIMARY KEY (affixHash, attributeID)
+--);
 
-DROP TABLE IF EXISTS itemSetBonusAttribute;
-CREATE TABLE itemSetBonusAttribute (
-itemSetBonusHash INTEGER NOT NULL,
-attributeID INTEGER NOT NULL,
-PRIMARY KEY (itemSetBonusHash, attributeID)
-);
+--DROP TABLE IF EXISTS itemSetBonusAttribute;
+--CREATE TABLE itemSetBonusAttribute (
+--itemSetBonusHash INTEGER NOT NULL,
+--attributeID INTEGER NOT NULL,
+--PRIMARY KEY (itemSetBonusHash, attributeID)
+--);
 
-DROP TABLE IF EXISTS socketedEffectAttribute;
-CREATE TABLE socketedEffectAttribute (
-socketedEffectHash INTEGER NOT NULL,
-attributeID INTEGER NOT NULL,
-PRIMARY KEY (socketedEffectHash, attributeID)
-);
+--DROP TABLE IF EXISTS socketedEffectAttribute;
+--CREATE TABLE socketedEffectAttribute (
+--socketedEffectHash INTEGER NOT NULL,
+--attributeID INTEGER NOT NULL,
+--PRIMARY KEY (socketedEffectHash, attributeID)
+--);
 
 .read "modCodes.sql"
 .read "attributes.sql"
 .read "affixes.sql"
 .read "affixGroups.sql"
 .read "affixGroupAssociation.sql"
-.read "affixeAttributes.sql"
+--.read "affixeAttributes.sql"
 .read "itemTypes.sql"
 .read "itemTypeAffixes.sql"
 .read "legendaryItemTypeAffixes.sql"
 .read "items.sql"
 .read "itemAffixes.sql"
-.read "itemAttributes.sql"
+--.read "itemAttributes.sql"
 .read "strings.sql"
 .read "itemModifiers.sql"
 .read "affixModifiers.sql"
 .read "resourceFiles.sql"
-.read "setItemAttributes.sql"
+--.read "setItemAttributes.sql"
 .read "setItemModifiers.sql"
 .read "setItems.sql"
 .read "socketedEffects.sql"
 .read "socketModifiers.sql"
-.read "socketedAttributes.sql"
+--.read "socketedAttributes.sql"

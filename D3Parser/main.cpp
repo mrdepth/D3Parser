@@ -233,7 +233,7 @@ void processItems(MPQGamHeader* gamHeader) {
 						}
 						else {
 							//assert(0);
-							printf("%d\t", modCode.modCode);
+							printf("%d, %d\t", modCode.modCode, modCode.modParam1);
 						}
 					}
 				}
@@ -957,7 +957,6 @@ void processResults() {
 
 int main(int argc, const char * argv[])
 {
-	Hash h = hash("All");
 	std::vector<std::string> stls = stlFiles();
 	std::string gams[] = {
 		"GameBalance/SocketedEffects.gam",
