@@ -1,0 +1,248 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12ACA3B21609F9210086ACEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACA3B11609F9210086ACEE /* main.cpp */; };
+		12ACA3B41609F9210086ACEE /* D3Parser.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12ACA3B31609F9210086ACEE /* D3Parser.1 */; };
+		12CA6EB716102ABF000E1539 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CA6EB116102ABF000E1539 /* tinystr.cpp */; };
+		12CA6EB816102ABF000E1539 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CA6EB316102ABF000E1539 /* tinyxml.cpp */; };
+		12CA6EB916102ABF000E1539 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CA6EB516102ABF000E1539 /* tinyxmlerror.cpp */; };
+		12CA6EBA16102ABF000E1539 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CA6EB616102ABF000E1539 /* tinyxmlparser.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		12ACA3AB1609F9210086ACEE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				12ACA3B41609F9210086ACEE /* D3Parser.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		12A5C55B160AFEA8008F51C4 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		12ACA3AD1609F9210086ACEE /* D3Parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = D3Parser; sourceTree = BUILT_PRODUCTS_DIR; };
+		12ACA3B11609F9210086ACEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		12ACA3B31609F9210086ACEE /* D3Parser.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = D3Parser.1; sourceTree = "<group>"; };
+		12CA6EB116102ABF000E1539 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		12CA6EB216102ABF000E1539 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
+		12CA6EB316102ABF000E1539 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		12CA6EB416102ABF000E1539 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		12CA6EB516102ABF000E1539 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		12CA6EB616102ABF000E1539 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		12CA6EBB16102B1D000E1539 /* tablesInit.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = tablesInit.sql; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12ACA3AA1609F9210086ACEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12ACA3A21609F9210086ACEE = {
+			isa = PBXGroup;
+			children = (
+				12ACA3B01609F9210086ACEE /* D3Parser */,
+				12ACA3AE1609F9210086ACEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12ACA3AE1609F9210086ACEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12ACA3AD1609F9210086ACEE /* D3Parser */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12ACA3B01609F9210086ACEE /* D3Parser */ = {
+			isa = PBXGroup;
+			children = (
+				12CA6EB016102AB1000E1539 /* TinyXml */,
+				12ACA3B11609F9210086ACEE /* main.cpp */,
+				12A5C55B160AFEA8008F51C4 /* types.h */,
+				12ACA3B31609F9210086ACEE /* D3Parser.1 */,
+				12CA6EBB16102B1D000E1539 /* tablesInit.sql */,
+			);
+			path = D3Parser;
+			sourceTree = "<group>";
+		};
+		12CA6EB016102AB1000E1539 /* TinyXml */ = {
+			isa = PBXGroup;
+			children = (
+				12CA6EB116102ABF000E1539 /* tinystr.cpp */,
+				12CA6EB216102ABF000E1539 /* tinystr.h */,
+				12CA6EB316102ABF000E1539 /* tinyxml.cpp */,
+				12CA6EB416102ABF000E1539 /* tinyxml.h */,
+				12CA6EB516102ABF000E1539 /* tinyxmlerror.cpp */,
+				12CA6EB616102ABF000E1539 /* tinyxmlparser.cpp */,
+			);
+			name = TinyXml;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12ACA3AC1609F9210086ACEE /* D3Parser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12ACA3B71609F9210086ACEE /* Build configuration list for PBXNativeTarget "D3Parser" */;
+			buildPhases = (
+				12ACA3A91609F9210086ACEE /* Sources */,
+				12ACA3AA1609F9210086ACEE /* Frameworks */,
+				12ACA3AB1609F9210086ACEE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = D3Parser;
+			productName = D3Parser;
+			productReference = 12ACA3AD1609F9210086ACEE /* D3Parser */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12ACA3A41609F9210086ACEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Artem Shimanski";
+			};
+			buildConfigurationList = 12ACA3A71609F9210086ACEE /* Build configuration list for PBXProject "D3Parser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 12ACA3A21609F9210086ACEE;
+			productRefGroup = 12ACA3AE1609F9210086ACEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12ACA3AC1609F9210086ACEE /* D3Parser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12ACA3A91609F9210086ACEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12ACA3B21609F9210086ACEE /* main.cpp in Sources */,
+				12CA6EB716102ABF000E1539 /* tinystr.cpp in Sources */,
+				12CA6EB816102ABF000E1539 /* tinyxml.cpp in Sources */,
+				12CA6EB916102ABF000E1539 /* tinyxmlerror.cpp in Sources */,
+				12CA6EBA16102ABF000E1539 /* tinyxmlparser.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12ACA3B51609F9210086ACEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		12ACA3B61609F9210086ACEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		12ACA3B81609F9210086ACEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		12ACA3B91609F9210086ACEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12ACA3A71609F9210086ACEE /* Build configuration list for PBXProject "D3Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12ACA3B51609F9210086ACEE /* Debug */,
+				12ACA3B61609F9210086ACEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12ACA3B71609F9210086ACEE /* Build configuration list for PBXNativeTarget "D3Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12ACA3B81609F9210086ACEE /* Debug */,
+				12ACA3B91609F9210086ACEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12ACA3A41609F9210086ACEE /* Project object */;
+}

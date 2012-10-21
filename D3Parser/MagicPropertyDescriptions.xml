@@ -1,0 +1,717 @@
+<MagicPropertyDescriptions Version="1.0.4">
+	<Description Name="HealCooldown" Key="">
+		<Property Name="Value" Code="119" />
+	</Description>
+	<Description Name="Durability" Key="" Format="[{VALUE1}/10|+] Durability">
+		<Property Name="Value" Code="310" />
+	</Description>
+	<Description Name="RequireBow" Key="">
+		<Property Name="Value" Code="318" Param="378" />
+	</Description>
+	<Description Name="Quiver" Key="" Ref="Quiver">
+		<Property Name="Value" Code="419" />
+	</Description>
+	<Description Name="CritHit" Key="Critical_Chance">
+		<Property Name="Value" Code="212" />
+	</Description>
+	
+	
+	<Description Name="Strength" Key="Strength_Item">
+		<Property Name="Value" Code="820" />
+	</Description>
+	<Description Name="Dexterity" Key="Dexterity_Item">
+		<Property Name="Value" Code="821" />
+	</Description>
+	<Description Name="Intelligence" Key="Intelligence_Item">
+		<Property Name="Value" Code="822" />
+	</Description>
+	<Description Name="Vitality" Key="Vitality_Item">
+		<Property Name="Value" Code="823" />
+	</Description>
+	<Description Name="Armor" Key="Armor_Bonus_Item">
+		<Property Name="Value" Code="49" />
+	</Description>
+	<Description Name="MF" Key="Magic_Find">
+		<Property Name="Value" Code="67" />
+	</Description>
+	<Description Name="ResistAll" Key="Resistance_All">
+		<Property Name="Value" Code="95" />
+	</Description>
+	<Description Name="ApsPct" Key="Attacks_Per_Second_Percent">
+		<Property Name="Value" Code="175" />
+	</Description>
+	<Description Name="LifePct" Key="Hitpoints_Max_Percent_Bonus_Item">
+		<Property Name="Value" Code="126" />
+	</Description>
+	<Description Name="SlowOnHitWeapon" Key="Weapon_On_Hit_Slow_Proc_Chance">
+		<Property Name="Value" Code="772" />
+	</Description>
+	<Description Name="BlockAmount" Key="Block_Amount_Item (pair)">
+		<Property Name="Minimum" Code="230" />
+		<Property Name="Delta" Code="231" Index="1" />
+	</Description>
+	<Description Name="BlockChance" Key="Block_Chance_Item_Total">
+		<Property Name="Value" Code="224" />
+	</Description>
+	<Description Name="Lps" Key="Hitpoints_Regen_Per_Second">
+		<Property Name="Value" Code="124" />
+	</Description>
+	<Description Name="Loh" Key="Hitpoints_On_Hit">
+		<Property Name="Value" Code="287" />
+	</Description>
+	<Description Name="FireDmgPair" Key="Damage#Fire (pair)">
+		<Property Name="Minimum" Code="196" Param="1" />
+		<Property Name="Delta" Code="188" Param="1" Index="2" />
+	</Description>
+	<Description Name="ColdDmgPair" Key="Damage#Cold (pair)">
+		<Property Name="Minimum" Code="196" Param="3" />
+		<Property Name="Delta" Code="188" Param="3" Index="2" />
+	</Description>
+	<Description Name="HolyDmgPair" Key="Damage#Holy (pair)">
+		<Property Name="Minimum" Code="196" Param="6" />
+		<Property Name="Delta" Code="188" Param="6" Index="2" />
+	</Description>
+	<Description Name="LightningDmgPair" Key="Damage#Lightning (pair)">
+		<Property Name="Minimum" Code="196" Param="2" />
+		<Property Name="Delta" Code="188" Param="2" Index="2" />
+	</Description>
+	<Description Name="PoisonDmgPair" Key="Damage#Poison (pair)">
+		<Property Name="Minimum" Code="196" Param="4" />
+		<Property Name="Delta" Code="188" Param="4" Index="2" />
+	</Description>
+	<Description Name="ArcaneDmgPair" Key="Damage#Arcane (pair)">
+		<Property Name="Minimum" Code="196" Param="5" />
+		<Property Name="Delta" Code="188" Param="5" Index="2" />
+	</Description>
+	<Description Name="Sockets" Key="Sockets" Format="Sockets ({VALUE})">
+		<Property Name="Value" Code="319" ReadOnly="true" />
+	</Description>
+	<Description Name="DeltaDmgWeapon" Key="Damage_Weapon_Bonus_Delta#Physical">
+		<Property Name="Value" Code="195" Param="0" />
+	</Description>
+	<Description Name="ArmorPct" Key="Armor_Item_Percent">
+		<Property Name="Value" Code="50" />
+	</Description>
+	<Description Name="Aps" Key="Attacks_Per_Second_Item_Bonus">
+		<Property Name="Value" Code="170" />
+	</Description>
+	<Description Name="GF" Key="Gold_Find">
+		<Property Name="Value" Code="59" />
+	</Description>
+	<Description Name="XpOnKill" Key="Experience_Bonus">
+		<Property Name="Value" Code="81" />
+	</Description>
+	<Description Name="ApsItemPct" Key="Attacks_Per_Second_Item_Percent">
+		<Property Name="Value" Code="168" />
+	</Description>
+	<Description Name="CcReduce" Key="CrowdControl_Reduction">
+		<Property Name="Value" Code="544" />
+	</Description>
+	<Description Name="DmgPct" Key="Damage_Weapon_Percent_Bonus">
+		<Property Name="Value" Code="203" Param="0" />
+	</Description>
+	<Description Name="CritDmg" Key="Crit_Damage_Percent">
+		<Property Name="Value" Code="214" />
+	</Description>
+	<Description Name="Globe" Key="Health_Globe_Bonus_Health">
+		<Property Name="Value" Code="85" />
+	</Description>
+	<Description Name="Pickup" Key="Gold_PickUp_Radius">
+		<Property Name="Value" Code="707" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_On_Hit#Mana">
+		<Property Name="Value" Code="284" Param="0" />
+	</Description>
+	<Description Name="ManaOnKill" Key="Resource_On_Kill#Mana">
+		<Property Name="Value" Code="285" Param="0" />
+	</Description>
+	<Description Name="MaxFury" Key="Resource_Max_Bonus#Fury">
+		<Property Name="Value" Code="132" Param="2" />
+	</Description>
+	<Description Name="MaxDiscipline" Key="Resource_Max_Bonus#Discipline">
+		<Property Name="Value" Code="132" Param="6" />
+	</Description>
+	<Description Name="MaxArcane" Key="Resource_Max_Bonus#Arcanum">
+		<Property Name="Value" Code="132" Param="1" />
+	</Description>
+	<Description Name="LifePerFury" Key="Spending_Resource_Heals_Percent#Fury">
+		<Property Name="Value" Code="78" Param="2" />
+	</Description>
+	<Description Name="LifeSteal" Key="Steal_Health_Percent">
+		<Property Name="Value" Code="282" />
+	</Description>
+	<Description Name="HatredPerSecond" Key="Resource_Regen_Per_Second#Hatred">
+		<Property Name="Value" Code="138" Param="5" />
+	</Description>
+	<Description Name="SpiritPerSecond" Key="Resource_Regen_Per_Second#Spirit">
+		<Property Name="Value" Code="138" Param="3" />
+	</Description>
+	<Description Name="ManaPerSecond" Key="Resource_Regen_Per_Second#Mana">
+		<Property Name="Value" Code="138" Param="0" />
+	</Description>
+	<Description Name="DisciplinePerSecond" Key="Resource_Regen_Per_Second#Discipline">
+		<Property Name="Value" Code="138" Param="6" />
+	</Description>
+	<Description Name="LifePerSpirit" Key="Spending_Resource_Heals_Percent#Spirit">
+		<Property Name="Value" Code="78" Param="3" />
+	</Description>
+	<Description Name="ArcaneOnCrit" Key="Resource_On_Crit#Arcanum">
+		<Property Name="Value" Code="286" Param="1" />
+	</Description>
+	<Description Name="MaxMana" Key="Resource_Max_Bonus#Mana">
+		<Property Name="Value" Code="132" Param="0" />
+	</Description>
+	<Description Name="PhysicalResist" Key="Resistance#Physical">
+		<Property Name="Value" Code="92" Param="0" />
+	</Description>
+	<Description Name="FireResist" Key="Resistance#Fire">
+		<Property Name="Value" Code="92" Param="1" />
+	</Description>
+	<Description Name="ColdResist" Key="Resistance#Cold">
+		<Property Name="Value" Code="92" Param="3" />
+	</Description>
+	<Description Name="LightningResist" Key="Resistance#Lightning">
+		<Property Name="Value" Code="92" Param="2" />
+	</Description>
+	<Description Name="PoisonResist" Key="Resistance#Poison">
+		<Property Name="Value" Code="92" Param="4" />
+	</Description>
+	<Description Name="ArcaneResist" Key="Resistance#Arcane">
+		<Property Name="Value" Code="92" Param="5" />
+	</Description>
+	<Description Name="DmgPair" Key="Damage#Physical (pair)">
+		<Property Name="Minimum" Code="180" Param="0" />
+		<Property Name="Delta" Code="178" Param="0" Index="1" />
+	</Description>
+	<Description Name="BleedOnHit" Key="Weapon_On_Hit_Bleed_Proc_Chance">
+		<Property Name="Value" Code="775" />
+		<Property Name="Minimum" Code="776" Index="2" />
+		<Property Name="Delta" Code="777" Index="3" />
+	</Description>
+	<Description Name="MvtSpeed" Key="Movement_Speed">
+		<Property Name="Value" Code="146" />
+	</Description>
+	<Description Name="DmgWeaponPair" Key="Damage_Weapon_Bonus_Min#Physical">
+		<Property Name="Value" Code="202" Param="0" />
+	</Description>
+	<Description Name="MinDmgBonus" Key="Damage_Bonus_Min#Physical">
+		<Property Name="Value" Code="181" Param="0" />
+	</Description>
+	<Description Name="DeltaDmg" Key="Damage_Delta#Physical">
+		<Property Name="Value" Code="178" Param="0" />
+	</Description>
+	<Description Name="BlockChanceBonus" Key="Block_Chance_Bonus_Item">
+		<Property Name="Value" Code="223" />
+	</Description>
+	<Description Name="LevelReq" Key="Item_Level_Requirement_Reduction">
+		<Property Name="Value" Code="824" />
+	</Description>
+	<Description Name="Lok" Key="Hitpoints_On_Kill">
+		<Property Name="Value" Code="288" />
+	</Description>
+	<Description Name="FearOnHit" Key="On_Hit_Fear_Proc_Chance">
+		<Property Name="Value" Code="744" />
+	</Description>
+	<Description Name="FearOnHitWeapon" Key="Weapon_On_Hit_Fear_Proc_Chance">
+		<Property Name="Value" Code="767" />
+	</Description>
+	<Description Name="StunOnHit" Key="On_Hit_Stun_Proc_Chance">
+		<Property Name="Value" Code="745" />
+	</Description>
+	<Description Name="StunOnHitWeapon" Key="Weapon_On_Hit_Stun_Proc_Chance">
+		<Property Name="Value" Code="768" />
+	</Description>
+	<Description Name="BlindOnHit" Key="On_Hit_Blind_Proc_Chance">
+		<Property Name="Value" Code="746" />
+	</Description>
+	<Description Name="BlindOnHitWeapon" Key="Weapon_On_Hit_Blind_Proc_Chance">
+		<Property Name="Value" Code="769" />
+	</Description>
+	<Description Name="FreezeOnHit" Key="On_Hit_Freeze_Proc_Chance">
+		<Property Name="Value" Code="747" />
+	</Description>
+	<Description Name="FreezeOnHitWeapon" Key="Weapon_On_Hit_Freeze_Proc_Chance">
+		<Property Name="Value" Code="770" />
+	</Description>
+	<Description Name="ChillOnHit" Key="On_Hit_Chill_Proc_Chance">
+		<Property Name="Value" Code="748" />
+	</Description>
+	<Description Name="ChillOnHitWeapon" Key="Weapon_On_Hit_Chill_Proc_Chance">
+		<Property Name="Value" Code="771" />
+	</Description>
+	<Description Name="SlowOnHit" Key="On_Hit_Slow_Proc_Chance">
+		<Property Name="Value" Code="749" />
+	</Description>
+	<Description Name="StunRootFreezeResist" Key="Resistance_StunRootFreeze">
+		<Property Name="Value" Code="543" />
+	</Description>
+	<Description Name="ImmobilizeOnHit" Key="On_Hit_Immobilize_Proc_Chance">
+		<Property Name="Value" Code="750" />
+	</Description>
+	<Description Name="ImmobilizeOnHitWeapon" Key="Weapon_On_Hit_Immobilize_Proc_Chance">
+		<Property Name="Value" Code="773" />
+	</Description>
+	<Description Name="KnockbackOnHit" Key="On_Hit_Knockback_Proc_Chance">
+		<Property Name="Value" Code="751" />
+	</Description>
+	<Description Name="KnockbackOnHitWeapon" Key="Weapon_On_Hit_Knockback_Proc_Chance">
+		<Property Name="Value" Code="774" />
+	</Description>
+	<Description Name="DmgPctReductionRanged" Key="Damage_Percent_Reduction_From_Ranged">
+		<Property Name="Value" Code="755" />
+	</Description>
+	<Description Name="DmgPctReductionMelee" Key="Damage_Percent_Reduction_From_Melee">
+		<Property Name="Value" Code="756" />
+	</Description>
+	<Description Name="DmgPctReductionHeal" Key="Damage_Percent_Reduction_Turns_Into_Heal">
+		<Property Name="Value" Code="757" />
+	</Description>
+	<Description Name="DmgPctElites" Key="Damage_Percent_Bonus_Vs_Elites">
+		<Property Name="Value" Code="761" />
+	</Description>
+	<Description Name="DmgPctReductionElites" Key="Damage_Percent_Reduction_From_Elites">
+		<Property Name="Value" Code="758" />
+	</Description>
+	<Description Name="IgnoreDurability" Key="Item_Indestructible">
+		<Property Name="Value" Code="826" />
+	</Description>
+	<Description Name="StunResist" Key="Resistance_Stun">
+		<Property Name="Value" Code="537" />
+	</Description>
+	<Description Name="RootResist" Key="Resistance_Root">
+		<Property Name="Value" Code="539" />
+	</Description>
+	<Description Name="FreezeResist" Key="Resistance_Freeze">
+		<Property Name="Value" Code="541" />
+	</Description>
+	<Description Name="GlobeChance" Key="Health_Globe_Bonus_Chance">
+		<Property Name="Value" Code="83" />
+	</Description>
+	<Description Name="Life" Key="Hitpoints_Granted">
+		<Property Name="Value" Code="118" />
+	</Description>
+	<Description Name="LifePctTotal" Key="Hitpoints_Percent">
+		<Property Name="Value" Code="123" />
+	</Description>
+	<Description Name="AllStats" Key="Stats_All_Bonus">
+		<Property Name="Value" Code="321" />
+	</Description>
+	<Description Name="Attack" Key="Attack">
+		<Property Name="Value" Code="31" />
+	</Description>
+	<Description Name="Precision" Key="Precision">
+		<Property Name="Value" Code="32" />
+	</Description>
+	<Description Name="Defense" Key="Defense">
+		<Property Name="Value" Code="33" />
+	</Description>
+	<Description Name="IntelligenceBase" Key="Intelligence">
+		<Property Name="Value" Code="12" />
+	</Description>
+	<Description Name="VitalityBase" Key="Vitality">
+		<Property Name="Value" Code="13" />
+	</Description>
+	<Description Name="ReduceCost80028" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Hammer of the Ancients" />
+		<Property Name="Value" Code="812" Param="80028" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Fury" />
+	</Description>
+	<Description Name="ReduceCost70472" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Rend" />
+		<Property Name="Value" Code="812" Param="70472" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Fury" />
+	</Description>
+	<Description Name="ReduceCost70472" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Sweeping Wind" />
+		<Property Name="Value" Code="812" Param="96090" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Fury" />
+	</Description>
+	<Description Name="DmgPct80263" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Cleave" />
+		<Property Name="Value" Code="811" Param="80263" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct78548" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Frenzy" />
+		<Property Name="Value" Code="811" Param="78548" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct86989" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Seismic Slam" />
+		<Property Name="Value" Code="815" Param="86989" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct96296" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Whirlwind" />
+		<Property Name="Value" Code="815" Param="96296" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct109342" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Revenge" />
+		<Property Name="Value" Code="815" Param="109342" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct159169" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Overpower" />
+		<Property Name="Value" Code="815" Param="159169" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct30744" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Magic Missile" />
+		<Property Name="Value" Code="811" Param="30744" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct30783" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Shock Pulse" />
+		<Property Name="Value" Code="811" Param="30783" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct77113" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Energy Twister" />
+		<Property Name="Value" Code="815" Param="77113" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct87525" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Explosive Blast" />
+		<Property Name="Value" Code="815" Param="87525" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct93395" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Ray of Frost" />
+		<Property Name="Value" Code="815" Param="93395" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost134456" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Arcane Torrent" />
+		<Property Name="Value" Code="812" Param="134456" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Arcane Power" />
+	</Description>
+	<Description Name="ReduceCost30725" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Hydra" />
+		<Property Name="Value" Code="812" Param="30725" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Arcane Power" />
+	</Description>
+	<Description Name="IncreaseDuration30680" Key="Power_Duration_Increase">
+		<Property Token="VALUE1" Text="Blizzard" />
+		<Property Name="Value" Code="814" Param="30680" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost69190" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Meteor" />
+		<Property Name="Value" Code="812" Param="69190" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Arcane Power" />
+	</Description>
+	<Description Name="DmgPct95940" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Fists of Thunder" />
+		<Property Name="Value" Code="811" Param="95940" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct96019" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Deadly Reach" />
+		<Property Name="Value" Code="811" Param="96019" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct96311" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Crippling Wave" />
+		<Property Name="Value" Code="811" Param="96311" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct97328" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Exploding Palm" />
+		<Property Name="Value" Code="811" Param="97328" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct97110" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Way of the Hundred Fists" />
+		<Property Name="Value" Code="811" Param="97110" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct121442" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Tempest Rush" />
+		<Property Name="Value" Code="815" Param="121442" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost223473" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Cyclone Strike" />
+		<Property Name="Value" Code="812" Param="223473" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Spirit" />
+</Description>
+	<Description Name="DmgPct103181" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Poison Dart" />
+		<Property Name="Value" Code="811" Param="103181" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct106465" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Plague of Toads" />
+		<Property Name="Value" Code="811" Param="106465" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct83602" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Haunt" />
+		<Property Name="Value" Code="811" Param="83602" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct108506" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Spirit Barrage" />
+		<Property Name="Value" Code="811" Param="108506" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct69866" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Corpse Spider" />
+		<Property Name="Value" Code="811" Param="69866" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost74003" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Zombie Charger" />
+		<Property Name="Value" Code="812" Param="74003" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Mana" />
+</Description>
+	<Description Name="ReduceCost67567" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Firebomb" />
+		<Property Name="Value" Code="812" Param="67567" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Mana" />
+	</Description>
+	<Description Name="DmgPct129215" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Hungering Arrow" />
+		<Property Name="Value" Code="811" Param="129215" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct134209" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Evasive Fire" />
+		<Property Name="Value" Code="811" Param="134209" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct77552" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Bola Shot" />
+		<Property Name="Value" Code="811" Param="77552" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct86610" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Grenades" />
+		<Property Name="Value" Code="811" Param="86610" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct77649" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Multishot" />
+		<Property Name="Value" Code="815" Param="77649" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct134030" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Strafe" />
+		<Property Name="Value" Code="815" Param="134030" Token="VALUE2" />
+	</Description>
+	<Description Name="Thorn" Key="Thorns_Fixed#Physical">
+		<Property Name="Value" Code="281" Param="0" />
+	</Description>
+	<Description Name="DmgPctReductionFire" Key="Damage_Percent_Reduction_From_Type#Fire">
+		<Property Name="Value" Code="759" Param="1" />
+	</Description>
+	<Description Name="DmgPctReductionCold" Key="Damage_Percent_Reduction_From_Type#Cold">
+		<Property Name="Value" Code="759" Param="3" />
+	</Description>
+	<Description Name="DmgPctReductionHoly" Key="Damage_Percent_Reduction_From_Type#Holy">
+		<Property Name="Value" Code="759" Param="6" />
+	</Description>
+	<Description Name="DmgPctReductionLightning" Key="Damage_Percent_Reduction_From_Type#Lightning">
+		<Property Name="Value" Code="759" Param="2" />
+	</Description>
+	<Description Name="DmgPctReductionPoison" Key="Damage_Percent_Reduction_From_Type#Poison">
+		<Property Name="Value" Code="759" Param="4" />
+	</Description>
+	<Description Name="DmgPctReductionArcane" Key="Damage_Percent_Reduction_From_Type#Arcane">
+		<Property Name="Value" Code="759" Param="5" />
+	</Description>
+	<Description Name="DmgPctFire" Key="Damage_Type_Percent_Bonus#Fire">
+		<Property Name="Value" Code="206" Param="1" />
+	</Description>
+	<Description Name="DmgPctCold" Key="Damage_Type_Percent_Bonus#Cold">
+		<Property Name="Value" Code="206" Param="3" />
+	</Description>
+	<Description Name="Damage_Type_Percent_Bonus#Holy" Key="Damage_Type_Percent_Bonus#Holy">
+		<Property Name="Value" Code="206" Param="6" />
+	</Description>
+	<Description Name="DmgPctLightning" Key="Damage_Type_Percent_Bonus#Lightning">
+		<Property Name="Value" Code="206" Param="2" />
+	</Description>
+	<Description Name="DmgPctPoison" Key="Damage_Type_Percent_Bonus#Poison">
+		<Property Name="Value" Code="206" Param="4" />
+	</Description>
+	<Description Name="DmgPctArcane" Key="Damage_Type_Percent_Bonus#Arcane">
+		<Property Name="Value" Code="206" Param="5" />
+	</Description>
+	<Description Name="DmgPctUndead" Key="Damage_Percent_Bonus_Vs_Monster_Type#Undead">
+		<Property Name="Value" Code="760" Param="0" />
+	</Description>
+	<Description Name="DmgPctDemon" Key="Damage_Percent_Bonus_Vs_Monster_Type#Demon">
+		<Property Name="Value" Code="760" Param="1" />
+	</Description>
+	<Description Name="DmgPctBeast" Key="Damage_Percent_Bonus_Vs_Monster_Type#Beast">
+		<Property Name="Value" Code="760" Param="2" />
+	</Description>
+	<Description Name="DmgPctHuman" Key="Damage_Percent_Bonus_Vs_Monster_Type#Human">
+		<Property Name="Value" Code="760" Param="3" />
+	</Description>
+	<Description Name="FurySet" Key="Resource_Set_Point_Bonus#Fury">
+		<Property Name="Value" Code="76" Param="2" />
+	</Description>
+	<Description Name="ThornHoly" Key="Thorns_Fixed#Holy">
+		<Property Name="Value" Code="281" Param="6" />
+	</Description>
+	<Description Name="ThornFire" Key="Thorns_Fixed#Fire">
+		<Property Name="Value" Code="281" Param="1" />
+	</Description>
+	<Description Name="DmgPct79242" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Bash" />
+		<Property Name="Value" Code="811" Param="79242" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct79242" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Weapon Throw" />
+		<Property Name="Value" Code="811" Param="93885" Token="VALUE2" />
+	</Description>
+		<Description Name="DmgPct79242" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Ancient Spear" />
+		<Property Name="Value" Code="811" Param="69979" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost93885" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Weapon Throw" />
+		<Property Name="Value" Code="812" Param="93885" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Fury" />
+	</Description>
+	<Description Name="DmgPct71548" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Spectral Blade" />
+		<Property Name="Value" Code="811" Param="71548" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct1765" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Electrocute" />
+		<Property Name="Value" Code="811" Param="1765" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct30668" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Arcane Orb" />
+		<Property Name="Value" Code="815" Param="30668" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost91549" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Disintegrate" />
+		<Property Name="Value" Code="812" Param="91549" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Arcane Power" />
+	</Description>
+	<Description Name="DmgPct96090" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Sweeping Wind" />
+		<Property Name="Value" Code="811" Param="96090" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost111676" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Lashing Tail Kick" />
+		<Property Name="Value" Code="812" Param="111676" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Spirit" />
+	</Description>
+	<Description Name="CritPct96033" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Wave of Light" />
+		<Property Name="Value" Code="815" Param="96033" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost105963" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Firebats" />
+		<Property Name="Value" Code="812" Param="105963" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Mana" />
+	</Description>
+	<Description Name="DmgPct69867" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Locust Swarm" />
+		<Property Name="Value" Code="811" Param="69867" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct70455" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Acid Cloud" />
+		<Property Name="Value" Code="815" Param="70455" Token="VALUE2" />
+	</Description>
+	<Description Name="PowerCooldownReduction134837" Key="Power_Cooldown_Reduction">
+		<Property Token="VALUE1" Text="Wall of Zombies" />
+		<Property Name="Value" Code="813" Param="134837" Token="VALUE2" />
+	</Description>
+	<Description Name="PowerCooldownReduction102573" Key="Power_Cooldown_Reduction">
+		<Property Token="VALUE1" Text="Summon Zombie Dogs" />
+		<Property Name="Value" Code="813" Param="102573" Token="VALUE2" />
+	</Description>
+	<Description Name="PowerCooldownReduction102573" Key="Power_Cooldown_Reduction">
+		<Property Token="VALUE1" Text="Mass Confusion" />
+		<Property Name="Value" Code="813" Param="67600" Token="VALUE2" />
+	</Description>
+	<Description Name="PowerCooldownReduction102573" Key="Power_Cooldown_Reduction">
+		<Property Token="VALUE1" Text="Gargantuan" />
+		<Property Name="Value" Code="813" Param="30624" Token="VALUE2" />
+	</Description>
+	<Description Name="PowerCooldownReduction102573" Key="Power_Cooldown_Reduction">
+		<Property Token="VALUE1" Text="Teleport" />
+		<Property Name="Value" Code="813" Param="168344" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct75873" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Entangling Shot" />
+		<Property Name="Value" Code="811" Param="75873" Token="VALUE2" />
+	</Description>
+	<Description Name="CritPct131192" Key="Power_Crit_Percent_Bonus">
+		<Property Token="VALUE1" Text="Rapid Fire" />
+		<Property Name="Value" Code="815" Param="131192" Token="VALUE2" />
+	</Description>
+	<Description Name="DmgPct131325" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Elemental Arrow" />
+		<Property Name="Value" Code="811" Param="131325" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost129214" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Cluster Arrow" />
+		<Property Name="Value" Code="812" Param="129214" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Hatred" />
+	</Description>
+	<Description Name="DmgPct75301" Key="Power_Damage_Percent_Bonus">
+		<Property Token="VALUE1" Text="Spike Trap" />
+		<Property Name="Value" Code="811" Param="75301" Token="VALUE2" />
+	</Description>
+	<Description Name="ReduceCost131366" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Chakram" />
+		<Property Name="Value" Code="812" Param="131366" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Hatred" />
+	</Description>
+	<Description Name="ReduceCost129213" Key="Power_Resource_Reduction">
+		<Property Token="VALUE1" Text="Impale" />
+		<Property Name="Value" Code="812" Param="129213" Token="VALUE2" />
+		<Property Token="VALUE3" Text="Hatred" />
+	</Description>
+	
+	
+	<Description Name="CritPercentBonusCapped" Key="Crit_Percent_Bonus_Capped"  Format="Critical Hit Chance Increased by [{VALUE}*100|1|}]%">
+		<Property Name="Value" Code="211" />
+	</Description>
+	<Description Name="DamageWeaponDelta" Key="">
+		<Property Name="Value" Code="188" />
+	</Description>
+	<Description Name="WeaponOnHitBleedProcDamageBase" Key="">
+		<Property Name="Value" Code="776" />
+	</Description>
+	<Description Name="WeaponOnHitBleedProcDamageDelta" Key="">
+		<Property Name="Value" Code="777" />
+	</Description>
+	<Description Name="ItemPowerPassive" Key="">
+		<Property Name="Value" Code="845" />
+	</Description>
+	<Description Name="BlockAmountItem_Delta" Key="">
+		<Property Name="Value" Code="231" />
+	</Description>
+	<Description Name="RequirementWhenEquipped" Key="">
+		<Property Name="Value" Code="318" />
+	</Description>
+	<Description Name="Bow" Key="">
+		<Property Name="Value" Code="394" />
+	</Description>
+	<Description Name="Crossbow" Key="">
+		<Property Name="Value" Code="395" />
+	</Description>
+	<Description Name="DamageDealtPercentBonusFire" Key="">
+		<Property Name="Value" Code="207" Param="1"/>
+	</Description>
+	<Description Name="DamageDealtPercentBonusLightning" Key="">
+		<Property Name="Value" Code="207" Param="2"/>
+	</Description>
+	<Description Name="DamageDealtPercentBonusCold" Key="">
+		<Property Name="Value" Code="207" Param="3"/>
+	</Description>
+	<Description Name="Amplify_Damage_Type_Percent" Key="">
+		<Property Name="Value" Code="307" />
+	</Description>
+	<Description Name="Experience_Bonus_Percent" Key="Experience_Bonus_Percent">
+		<Property Name="Value" Code="82" />
+	</Description>
+	<Description Name="ScrollDuration" Key="">
+		<Property Name="Value" Code="566" />
+	</Description>
+	<Description Name="GemQuality" Key="GemQuality">
+		<Property Name="Value" Code="564" />
+	</Description>
+	<Description Name="DyeType" Key="">
+		<Property Name="Value" Code="332" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Arcanum">
+		<Property Name="Value" Code="138" Param="1" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Discipline">
+		<Property Name="Value" Code="138" Param="6" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Fury">
+		<Property Name="Value" Code="138" Param="2" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Hatred">
+		<Property Name="Value" Code="138" Param="5" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Mana">
+		<Property Name="Value" Code="138" Param="0" />
+	</Description>
+	<Description Name="ManaOnHit" Key="Resource_Regen_Per_Second#Spirit">
+		<Property Name="Value" Code="138" Param="3" />
+	</Description>
+</MagicPropertyDescriptions>
