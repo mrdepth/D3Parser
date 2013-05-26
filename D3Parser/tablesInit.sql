@@ -63,15 +63,15 @@ affixLevel  INTEGER,
 superiorMask  INTEGER,
 requiredLevel INTEGER,
 type INTEGER,
-effectTier INTEGER,
-convertsTo INTEGER,
+--effectTier INTEGER,
+--convertsTo INTEGER,
 rareNamePrefixID INTEGER,
 rareNameSuffixID  INTEGER,
 resourceOrClass  INTEGER,
 resourceTypeHash  INTEGER,
 qualityMask INTEGER,
 propertyType INTEGER,
-primaryGroupHash INTEGER,
+--primaryGroupHash INTEGER,
 PRIMARY KEY (affixHash)
 );
 

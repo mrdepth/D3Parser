@@ -83,7 +83,7 @@ typedef struct	// sizeof 0x5F0
 	int32_t goldPrice;	// gold buy price (sell price is 15% of buy)
 	int32_t unknown6;	// related to level?
 	int32_t cLevel;	// character level required to use the item
-	int32_t unknown15;	// related to level?
+//	int32_t unknown15;	// related to level?
 	int32_t durabilityMin;	// min durability
 	int32_t durabilityMax;	// max durability (offset from min)
 	int32_t baseItemHash;	// hash of the base item
@@ -105,7 +105,7 @@ typedef struct	// sizeof 0x5F0
 	float minDamageMod;	// weapon min damage modifier
 	float maxDamageMod;	// weapon max damage modifier (offset from min)
 	int32_t unknown10A[26];	// ???
-	int32_t unknown11;	// ???
+//	int32_t unknown11;	// ???
 	int32_t unknown12[18];	// ???
 	MPQModCode mods[16];	// see ModCode structure below
 	int32_t itemQuality;	// -1: invalid, 3: magic, 6: rare, 9: lgd.
@@ -123,7 +123,7 @@ typedef struct	// sizeof 0x5F0
 	int32_t gemType;	// gem type: 1=Amethyst, 2=Emerald, 3=Ruby, 4=Topaz
 	int32_t craftingMatTier;	// crafting material tier
 	int32_t craftingMatRarity;	// crafting material rarity
-	int32_t unknown14[7];	// always 0x00000000
+	int32_t unknown14[1];	// always 0x00000000
 } MPQItem;
 
 typedef struct 	// sizeof 0x290
@@ -139,20 +139,20 @@ typedef struct 	// sizeof 0x290
 	int32_t requiredLevel;	// ? (cLvl of the affix?)
 	int32_t unknown6;	// ? (level-related?)
 	int32_t type;	// used for some affixes such as elemental dmg and class skills
-	int32_t effectTier;	// used for some affixes such as MF and elemental dmg
-	int32_t convertsTo;	// used for some affixes such as MF and elemental dmg
+//	int32_t effectTier;	// used for some affixes such as MF and elemental dmg
+//	int32_t convertsTo;	// used for some affixes such as MF and elemental dmg
 	int32_t rareNamePrefixId;	// file Id of the RareNameStrings_Prefix_*.stl file
 	int32_t rareNameSuffixId;	// file Id of the RareNameStrings_Suffix_*.stl file
 	Hash affixGroups[2];	// affix group hash
 	int32_t resourceOrClass;	// resource/class
 	Hash resourceTypeHash;	// resource type hash
 	int32_t unknown5;	// hash? (only populated for Legendary Mana items)
-	int32_t unused2[5];	// always 0xFFFFFFFF
-	int32_t itemTypes[16];	// item group hashes which can have this affix (up to32)
-	int32_t legendaryItemTypes[16];	// item group hashes which can have this affix (up to32)
+	int32_t unused2[4];	// always 0xFFFFFFFF
+	int32_t itemTypes[3];	// item group hashes which can have this affix (up to32)
+	int32_t legendaryItemTypes[3];	// item group hashes which can have this affix (up to32)
 	int32_t qualityMask;	// item quality mask?
 	int32_t propertyType;
-	Hash primaryGroupHash;	// primary group hash for secondary affixes
+	//Hash primaryGroupHash;	// primary group hash for secondary affixes
 	int32_t socketMask;	// socket mask
 	MPQModCode mods[4];	// see ModCode structure below
 	int32_t unused4[18];	// always 0x00000000
