@@ -237,8 +237,7 @@ void processItems(MPQGamHeader* gamHeader) {
 						}
 					}
 				}
-				//pItem = (MPQItem*) ((char*) pItem + 1488);
-				pItem++;
+				pItem += 1;
 			}
 		}
 	}
@@ -307,7 +306,6 @@ void processAffixes(MPQGamHeader* gamHeader) {
 				}
 				
 				pAffix += 1;
-				//pAffix = (MPQAffix*) (((char*) pAffix) + 544);
 			}
 		}
 	}
@@ -751,16 +749,15 @@ void processResults() {
 			", " << affix.supMask <<
 			", " << affix.requiredLevel <<
 			", " << affix.type <<
-//			", " << affix.effectTier <<
-	//		", " << affix.convertsTo <<
+			", " << affix.effectTier <<
+			", " << affix.convertsTo <<
 			", " << affix.rareNamePrefixId <<
 			", " << affix.rareNameSuffixId <<
 			", " << affix.resourceOrClass <<
 			", " << affix.resourceTypeHash <<
 			", " << affix.qualityMask <<
 			", " << affix.propertyType <<
-//			", " << affix.primaryGroupHash <<
-			");" << std::endl;
+			", " << affix.primaryGroupHash << ");" << std::endl;
 		
 		for (int i = 0; i < 2; i++) {
 			if (isValidHash(affix.affixGroups[i])) {
@@ -960,15 +957,14 @@ void processResults() {
 
 int main(int argc, const char * argv[])
 {
-	int s = sizeof(MPQItem);
 	std::vector<std::string> stls = stlFiles();
 	std::string gams[] = {
 		"GameBalance/SocketedEffects.gam",
 		"GameBalance/AffixList.gam",
 		"GameBalance/ItemTypes.gam",
 		"GameBalance/Items_Armor.gam",
-		"GameBalance/Items_Legendary_Weapons.gam",
 		"GameBalance/Items_Legendary_Other.gam",
+		"GameBalance/Items_Legendary_Weapons.gam",
 		"GameBalance/Items_Legendary.gam",
 		"GameBalance/Items_Other.gam",
 		"GameBalance/Items_Quests_Beta.gam",
