@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS itemType;
 CREATE TABLE itemType (
 itemTypeHash INTEGER NOT NULL,
-fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 parentItemTypeHash INTEGER,
 flags  INTEGER,
@@ -20,7 +19,6 @@ PRIMARY KEY (itemTypeHash)
 DROP TABLE IF EXISTS item;
 CREATE TABLE item (
 itemHash INTEGER NOT NULL,
-fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 actorID INTEGER,
 itemTypeHash INTEGER NOT NULL,
@@ -57,7 +55,6 @@ PRIMARY KEY (itemHash)
 DROP TABLE IF EXISTS affix;
 CREATE TABLE affix (
 affixHash INTEGER NOT NULL,
-fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 affixLevel  INTEGER,
 superiorMask  INTEGER,
@@ -78,7 +75,6 @@ PRIMARY KEY (affixHash)
 DROP TABLE IF EXISTS itemSetBonus;
 CREATE TABLE itemSetBonus (
 itemSetBonusHash INTEGER NOT NULL,
-fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 parentHash  INTEGER,
 numOfSet  INTEGER,
@@ -88,7 +84,6 @@ PRIMARY KEY (itemSetBonusHash)
 DROP TABLE IF EXISTS socketedEffect;
 CREATE TABLE socketedEffect (
 socketedEffectHash INTEGER NOT NULL,
-fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 itemHash  INTEGER,
 itemTypeHash  INTEGER,
@@ -185,8 +180,6 @@ stringHash INTEGER NOT NULL,
 fileID INTEGER NOT NULL,
 nonNlsKey  TEXT(255),
 description1  TEXT(255),
-description2  TEXT(255),
-description3  TEXT(255),
 PRIMARY KEY (stringHash, fileID)
 );
 

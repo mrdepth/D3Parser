@@ -1,21 +1,14 @@
+//--------------------------------------
+//--- 010 Editor v5.0 Binary Template
 //
-//  types.h
-//  D3Parser
-//
-//  Created by Artem Shimanski on 20.09.12.
-//  Copyright (c) 2012 Artem Shimanski. All rights reserved.
-//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
 
-#ifndef D3Parser_types_h
-#define D3Parser_types_h
-
-//#include <stdint.h>
-typedef int int32_t;
-typedef long long int64_t;
-typedef int32_t Hash;
-typedef unsigned char Byte;
-
-const int DataArrayEntrySize = 37;
+typedef DWORD Hash;
+typedef DWORD int32_t;
 
 typedef struct {
 	int32_t mpqMagicNumber;
@@ -35,7 +28,7 @@ typedef struct {
 	int32_t recordIndex;
 	int32_t unknown;
 	int32_t unused2;
-	MPQGamDataArrayEntry dataArrayEntry[35];	// array of DataArrayEntry (see below)
+	MPQGamDataArrayEntry dataArrayEntry[37];	// array of DataArrayEntry (see below)
 } MPQGamHeader;
 
 typedef struct {
@@ -171,43 +164,6 @@ typedef struct {
 	int32_t unknown17[47];	// always 0x00000000
 	int32_t unknown19[16];	// always 0x00000000
 } MPQItem;
- 
-typedef struct {
-	int32_t stlFileId;	// Stl file Id
-	int32_t unknown1[5];	// always 0x00000000
-	int32_t headerSize;	// size (in bytes) of the StlHeader? (always 0x00000028)
-	int32_t entriesSize;	// size (in bytes) of the StlEntries
-	int32_t unknown2[2];	// always 0x00000000
-} MPQStlHeader;
 
-typedef struct {
-	int32_t unknown1[2];	// always 0x00000000
-	int32_t string1offset;	// file offset for string1 (non-NLS key)
-	int32_t string1size;	// size of string1
-	int32_t unknown2[2];	// always 0x00000000
-	int32_t string2offset;	// file offset for string2
-	int32_t string2size;	// size of string2
-	int32_t unknown3[2];	// always 0x00000000
-} MPQStlEntry;
-
-typedef struct {
-	int attributeID;
-	int modCode;
-	int param;
-	std::string nonNlsKey;
-	std::string name;
-	std::string value1;
-	std::string value2;
-	std::string value3;
-	std::string format;
-} Attribute;
-
-typedef struct {
-	int rawAttributeID;
-	std::string nonNlsKey;
-	std::string scriptA;
-	std::string scriptB;
-	std::string encodingType;
-} RawAttribute;
-
-#endif
+MPQHeader header;
+MPQGamHeader gamHeader;

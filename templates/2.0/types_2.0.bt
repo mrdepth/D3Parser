@@ -1,21 +1,14 @@
+//--------------------------------------
+//--- 010 Editor v5.0 Binary Template
 //
-//  types.h
-//  D3Parser
-//
-//  Created by Artem Shimanski on 20.09.12.
-//  Copyright (c) 2012 Artem Shimanski. All rights reserved.
-//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
 
-#ifndef D3Parser_types_h
-#define D3Parser_types_h
-
-//#include <stdint.h>
-typedef int int32_t;
-typedef long long int64_t;
-typedef int32_t Hash;
-typedef unsigned char Byte;
-
-const int DataArrayEntrySize = 37;
+typedef DWORD Hash;
+typedef DWORD int32_t;
 
 typedef struct {
 	int32_t mpqMagicNumber;
@@ -103,12 +96,12 @@ typedef struct {
 	char itemTypeName[256];	// non-NLS key name of the item type
 	int32_t unknown[2];
 	Hash parentHash;	// hash of the parent item type
-	int32_t unused2[3];	// always 0x00000000
+	int32_t unused2[2];	// always 0x00000000
 	int32_t flags;	// class mask
 	int32_t slot[4];	// item slot
 	Hash inherentAffixHashes[3];	// always 0x00000000
 	Hash inherentAffixGroupHash;	// affix group hash
-	int32_t bitMask[5];	// bit mask
+	int32_t bitMask[4];	// bit mask
 } MPQItemType;
 
 typedef struct {
@@ -125,7 +118,7 @@ typedef struct {
 	int32_t numSockets;	// number of sockets the item can have
 	int32_t stackSize;	// stack size
 	int32_t goldPrice;	// gold buy price (sell price is 15% of buy)
-	int32_t unknown6[4];	// related to level?
+	int32_t unknown6[3];	// related to level?
 	int32_t cLevel;	// character level required to use the item
 	int32_t unknown15;	// related to level?
 	int32_t durabilityMin;	// min durability
@@ -138,19 +131,20 @@ typedef struct {
 	int32_t salvageRare;	// salvage rare TreasureClass
 	int32_t rareGroupPrefixId;	// MPQ Id of RareNameStrings_Prefix_*.stl file
 	int32_t rareGroupSuffixId;	// MPQ Id of RareNameStrings_Suffix_*.stl file
-	int32_t unknown7[5];	// ???
+	int32_t unknown7[27];	// ???
 	float minDamage;	// weapon min damage
 	float maxDamage;	// weapon max damage (offset from min)
-	float minDamageMod;	// weapon min damage modifier
-	float maxDamageMod;	// weapon max damage modifier (offset from min)
-	float weaponSpeed;	// weapon speed
+	int32_t unknown8[21];	// ???
 	float minArmor;	// min armor
 	float maxArmor;	// max armor (offset from min)
-	//int32_t unknown9[42];	// ???
-	//int32_t unknown10[21];	// ???
-	int32_t unknown10A[8];	// ???
-	//int32_t unknown11;	// ???
-	//int32_t unknown12[26];	// ???
+	int32_t unknown9[42];	// ???
+	float weaponSpeed;	// weapon speed
+	int32_t unknown10[21];	// ???
+	float minDamageMod;	// weapon min damage modifier
+	float maxDamageMod;	// weapon max damage modifier (offset from min)
+	int32_t unknown10A[26];	// ???
+	int32_t unknown11;	// ???
+	int32_t unknown12[26];	// ???
 	MPQModCode mods[16];	// see ModCode structure below
 	int32_t itemQuality;	// -1: invalid, 3: magic, 6: rare, 9: lgd.
 	int32_t teaches1;	// recipe hash (in Recipes*.gam)
@@ -169,45 +163,7 @@ typedef struct {
 	int32_t craftingMatTier;	// crafting material tier
 	int32_t craftingMatRarity;	// crafting material rarity
 	int32_t unknown17[47];	// always 0x00000000
-	int32_t unknown19[16];	// always 0x00000000
 } MPQItem;
- 
-typedef struct {
-	int32_t stlFileId;	// Stl file Id
-	int32_t unknown1[5];	// always 0x00000000
-	int32_t headerSize;	// size (in bytes) of the StlHeader? (always 0x00000028)
-	int32_t entriesSize;	// size (in bytes) of the StlEntries
-	int32_t unknown2[2];	// always 0x00000000
-} MPQStlHeader;
 
-typedef struct {
-	int32_t unknown1[2];	// always 0x00000000
-	int32_t string1offset;	// file offset for string1 (non-NLS key)
-	int32_t string1size;	// size of string1
-	int32_t unknown2[2];	// always 0x00000000
-	int32_t string2offset;	// file offset for string2
-	int32_t string2size;	// size of string2
-	int32_t unknown3[2];	// always 0x00000000
-} MPQStlEntry;
-
-typedef struct {
-	int attributeID;
-	int modCode;
-	int param;
-	std::string nonNlsKey;
-	std::string name;
-	std::string value1;
-	std::string value2;
-	std::string value3;
-	std::string format;
-} Attribute;
-
-typedef struct {
-	int rawAttributeID;
-	std::string nonNlsKey;
-	std::string scriptA;
-	std::string scriptB;
-	std::string encodingType;
-} RawAttribute;
-
-#endif
+MPQHeader header;
+MPQGamHeader gamHeader;

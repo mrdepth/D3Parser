@@ -91,7 +91,7 @@ std::map<Hash, std::vector<int> > socketAttributes;
 Hash hash(const char* string) {
 	Hash hash = 0;
 	size_t n = strlen(string);
-	for (int i = 0; i < n; i++)
+	for (size_t i = 0; i < n; i++)
 		hash = (hash * 0x21) + tolower(string[i]);
 	return hash;
 }
@@ -126,6 +126,30 @@ Range modDataResult(void* modData, int size) {
 						stack.push_back(c);
 						break;
 					}
+					case 0x0b:
+					case 0x0c:
+					case 0x0d:
+					case 0x0e:
+					{
+						assert(stack.size() > 1);
+						Range b = stack.back();
+						stack.pop_back();
+						Range a = stack.back();
+						stack.pop_back();
+						Range c;
+						if (*p == 0x0b)
+							c = a + b;
+						else if (*p == 0x0c)
+							c = a - b;
+						else if (*p == 0x0d)
+							c = a * b;
+						else if (*p == 0x0e)
+							c = a / b;
+						stack.push_back(c);
+						break;
+					}
+
+
 				}
 				break;
 			case 0x06:
@@ -157,6 +181,20 @@ Range modDataResult(void* modData, int size) {
 				stack.push_back(c);
 				break;
 			}
+			case 0x05:
+			{
+				p += 4;
+				Range range;
+				range.min = *reinterpret_cast<int32_t*>(p);
+				range.max = range.min;
+				stack.push_back(range);
+				p += 12;
+
+				break;
+			}
+			default:
+				assert(0);
+				break;
 		}
 		p += 4;
 	}
@@ -206,7 +244,7 @@ void processItems(MPQGamHeader* gamHeader) {
 			int count = entry.dataNumBytes / sizeof(MPQItem);
 			MPQItem* pItem = reinterpret_cast<MPQItem*>(reinterpret_cast<Byte*>(gamHeader) + entry.dataOffset);
 			for (int j = 0; j < count; j++) {
-				pItem->fileID = gamHeader->fileId;
+				//pItem->fileID = gamHeader->fileId;
 				items.push_back(*pItem);
 				for (int k = 0; k < 16; k++) {
 					MPQModCode& modCode = pItem->mods[k];
@@ -214,7 +252,9 @@ void processItems(MPQGamHeader* gamHeader) {
 						Byte* pModCodeData = reinterpret_cast<Byte*>(reinterpret_cast<char*>(gamHeader) + modCode.varDataOffset);
 						Range r = modDataResult(pModCodeData, modCode.varDataLength);
 						
-						ModDataKey key = ((ModDataKey)gamHeader->fileId) << 32 | modCode.varDataOffset;
+						Hash h = hash(pItem->itemName);
+
+						ModDataKey key = ((ModDataKey)h) << 32 | modCode.varDataOffset;
 						modData[key] = r;
 						//usedModCodesMap.insert(modCode.modCode);
 						
@@ -250,7 +290,7 @@ void processAffixes(MPQGamHeader* gamHeader) {
 			int count = entry.dataNumBytes / sizeof(MPQAffix);
 			MPQAffix* pAffix = reinterpret_cast<MPQAffix*>(reinterpret_cast<Byte*>(gamHeader) + entry.dataOffset);
 			for (int j = 0; j < count; j++) {
-				pAffix->fileID = gamHeader->fileId;
+				//pAffix->fileID = gamHeader->fileId;
 				affixes.push_back(*pAffix);
 				for (int k = 0; k < 4; k++) {
 					MPQModCode& modCode = pAffix->mods[k];
@@ -258,7 +298,9 @@ void processAffixes(MPQGamHeader* gamHeader) {
 						Byte* pModCodeData = reinterpret_cast<Byte*>(reinterpret_cast<char*>(gamHeader) + modCode.varDataOffset);
 						Range r = modDataResult(pModCodeData, modCode.varDataLength);
 						
-						ModDataKey key = ((ModDataKey)gamHeader->fileId) << 32 | modCode.varDataOffset;
+						Hash h = hash(pAffix->affixName);
+
+						ModDataKey key = ((ModDataKey)h) << 32 | modCode.varDataOffset;
 						modData[key] = r;
 						//usedModCodesMap.insert(modCode.modCode);
 
@@ -318,7 +360,7 @@ void processSetBonuses(MPQGamHeader* gamHeader) {
 			int count = entry.dataNumBytes / sizeof(MPQSetItemBonus);
 			MPQSetItemBonus* pBonus = reinterpret_cast<MPQSetItemBonus*>(reinterpret_cast<Byte*>(gamHeader) + entry.dataOffset);
 			for (int j = 0; j < count; j++) {
-				pBonus->fileID = gamHeader->fileId;
+				//pBonus->fileID = gamHeader->fileId;
 				setItemBonuses.push_back(*pBonus);
 				for (int k = 0; k < 8; k++) {
 					MPQModCode& modCode = pBonus->mods[k];
@@ -326,7 +368,8 @@ void processSetBonuses(MPQGamHeader* gamHeader) {
 						Byte* pModCodeData = reinterpret_cast<Byte*>(reinterpret_cast<char*>(gamHeader) + modCode.varDataOffset);
 						Range r = modDataResult(pModCodeData, modCode.varDataLength);
 						
-						ModDataKey key = ((ModDataKey)gamHeader->fileId) << 32 | modCode.varDataOffset;
+						Hash h = hash(pBonus->itemSetName);
+						ModDataKey key = ((ModDataKey)h) << 32 | modCode.varDataOffset;
 						modData[key] = r;
 						//usedModCodesMap.insert(modCode.modCode);
 						
@@ -362,7 +405,7 @@ void processSocketedEffects(MPQGamHeader* gamHeader) {
 			int count = entry.dataNumBytes / sizeof(MPQSocketedEffect);
 			MPQSocketedEffect* pEffect = reinterpret_cast<MPQSocketedEffect*>(reinterpret_cast<Byte*>(gamHeader) + entry.dataOffset);
 			for (int j = 0; j < count; j++) {
-				pEffect->fileID = gamHeader->fileId;
+				//pEffect->fileID = gamHeader->fileId;
 				socketedEffects.push_back(*pEffect);
 				for (int k = 0; k < 5; k++) {
 					MPQModCode& modCode = pEffect->mods[k];
@@ -370,7 +413,8 @@ void processSocketedEffects(MPQGamHeader* gamHeader) {
 						Byte* pModCodeData = reinterpret_cast<Byte*>(reinterpret_cast<char*>(gamHeader) + modCode.varDataOffset);
 						Range r = modDataResult(pModCodeData, modCode.varDataLength);
 						
-						ModDataKey key = ((ModDataKey)gamHeader->fileId) << 32 | modCode.varDataOffset;
+						Hash h = hash(pEffect->socketedEffectName);
+						ModDataKey key = ((ModDataKey)h) << 32 | modCode.varDataOffset;
 						modData[key] = r;
 						//usedModCodesMap.insert(modCode.modCode);
 						
@@ -400,7 +444,7 @@ void processSocketedEffects(MPQGamHeader* gamHeader) {
 }
 
 
-void processGamFile(MPQGamHeader* gamHeader) {
+void processGamFile(MPQGamHeader* gamHeader, const std::string& fileName) {
 	static const int32_t ItemTypes = hash(".\\Resources\\Excel\\ItemTypes.xls");
 	static const int32_t ItemsArmor = hash(".\\Resources\\Excel\\Items_Armor.xls");
 	static const int32_t ItemsLegendaryOther = hash(".\\Resources\\Excel\\Items_Legendary_Other.xls");
@@ -413,28 +457,31 @@ void processGamFile(MPQGamHeader* gamHeader) {
 	static const int32_t AffixList = hash(".\\Resources\\Excel\\AffixList.xls");
 	static const int32_t SetItemBonuses = hash(".\\Resources\\Excel\\SetItemBonuses.xls");
 	static const int32_t SocketedEffects = hash(".\\Resources\\Excel\\SocketedEffects.xls");
+	std::string resourceType = fileName.substr(fileName.find_last_of("/") + 1);
+
+	//resourceType = ItemsArmor;
 	
-	int32_t resourceType = hash(gamHeader->resourceName);
-	
-	if (resourceType == ItemTypes)
+	if (resourceType == "ItemTypes.gam")
 		processItemTypes(gamHeader);
-	else if (resourceType == ItemsArmor ||
-			 resourceType == ItemsLegendaryOther ||
-			 resourceType == ItemsLegendaryWeapon ||
-			 resourceType == ItemsLegendary ||
-			 resourceType == ItemsOther ||
-			 resourceType == ItemsQuestsBeta ||
-			 resourceType == ItemsQuests ||
-			 resourceType == ItemsWeapons)
+	else if (resourceType == "Items_Armor.gam" ||
+			 resourceType == "Items_Legendary_Other.gam" ||
+			 resourceType == "Items_Legendary_Weapons.gam" ||
+			 resourceType == "Items_Legendary.gam"||
+			 resourceType == "Items_Other.gam" ||
+			 resourceType == "Items_Quests_Beta.gam" ||
+			 resourceType == "Items_Quests.gam" ||
+			 resourceType == "Items_Weapons.gam")
 		processItems(gamHeader);
-	else if (resourceType == AffixList)
+	else if (resourceType == "AffixList.gam" ||
+			 resourceType == "1xx_AffixList.gam" ||
+			 resourceType == "x1_AffixList.gam")
 		processAffixes(gamHeader);
-	else if (resourceType == SetItemBonuses)
+	else if (resourceType == "SetItemBonuses.gam")
 		processSetBonuses(gamHeader);
-	else if (resourceType == SocketedEffects)
+	else if (resourceType == "SocketedEffects.gam")
 		processSocketedEffects(gamHeader);
 	else
-		std::cout << "Unknown resource " << gamHeader->resourceName << std::endl;
+		std::cout << "Unknown resource " << resourceType << std::endl;
 }
 
 void processStlFile(MPQStlHeader* stlHeader) {
@@ -446,10 +493,10 @@ void processStlFile(MPQStlHeader* stlHeader) {
 		}
 		std::vector<std::string> strings;
 		strings.reserve(4);
-		int32_t offsets[] = {pStlEntry->string1offset, pStlEntry->string2offset, pStlEntry->string3offset, pStlEntry->string4offset};
-		int32_t sizes[] = {pStlEntry->string1size, pStlEntry->string2size, pStlEntry->string3size, pStlEntry->string4size};
+		int32_t offsets[] = {pStlEntry->string1offset, pStlEntry->string2offset};
+		int32_t sizes[] = {pStlEntry->string1size, pStlEntry->string2size};
 		std::string key;
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 2; i++) {
 			if (offsets[i] > 0 && sizes[i] > 1) {
 				const char* s = reinterpret_cast<char*>(stlHeader) + offsets[i];
 				strings.push_back(s);
@@ -475,7 +522,7 @@ void processFile(const std::string& fileName) {
 	std::string extension = fileName.substr(fileName.find_last_of(".") + 1);
 	if (extension == "gam") {
 		MPQGamHeader* gamHeader = reinterpret_cast<MPQGamHeader*>(mpqHeader + 1);
-		processGamFile(gamHeader);
+		processGamFile(gamHeader, fileName);
 		filesMap[gamHeader->fileId] = fileName;
 	}
 	else if (extension == "stl") {
@@ -743,7 +790,7 @@ void processResults() {
 	for (auto affix: affixes) {
 		Hash affixHash = hash(affix.affixName);
 		affixesSQL << "INSERT INTO affix VALUES(" << affixHash <<
-			", " << affix.fileID <<
+			//", " << affix.fileID <<
 			", \"" << affix.affixName <<
 			"\", " << affix.aLvl <<
 			", " << affix.supMask <<
@@ -770,7 +817,7 @@ void processResults() {
 		for (int i = 0; i < 4; i++) {
 			MPQModCode& modCode = affix.mods[i];
 			if (modCode.modCode > 0 && modCode.varDataOffset) {
-				ModDataKey key = ((ModDataKey)affix.fileID) << 32 | modCode.varDataOffset;
+				ModDataKey key = ((ModDataKey) affixHash) << 32 | modCode.varDataOffset;
 				Range r = modData[key];
 				affixModifiersSQL << "INSERT INTO affixModifier VALUES(" << affixHash <<
 				", " << modCode.modCode <<
@@ -805,7 +852,7 @@ void processResults() {
 	for (auto itemType: itemTypes) {
 		Hash itemTypeHash = hash(itemType.itemTypeName);
 		itemTypesSQL << "INSERT INTO itemType VALUES(" << itemTypeHash <<
-			", " << itemType.fileID <<
+			//", " << itemType.fileID <<
 			", \"" << itemType.itemTypeName <<
 			"\", " << itemType.parentHash <<
 			", " << itemType.flags <<
@@ -830,7 +877,7 @@ void processResults() {
 	for (auto item: items) {
 		int itemHash = hash(item.itemName);
 		itemsSQL << "INSERT INTO item VALUES (" << itemHash <<
-			", " << item.fileID <<
+			//", " << item.fileID <<
 			", \"" << item.itemName <<
 			"\", " << item.actorId <<
 			", " << item.itemTypeHash <<
@@ -873,7 +920,7 @@ void processResults() {
 		for (int i = 0; i < 16; i++) {
 			MPQModCode& modCode = item.mods[i];
 			if (modCode.modCode > 0 && modCode.varDataOffset) {
-				ModDataKey key = ((ModDataKey)item.fileID) << 32 | modCode.varDataOffset;
+				ModDataKey key = ((ModDataKey) itemHash) << 32 | modCode.varDataOffset;
 				
 				Range r = modData[key];
 				itemModifiersSQL << "INSERT INTO itemModifier VALUES(" << itemHash <<
@@ -890,7 +937,7 @@ void processResults() {
 	for (auto setItem: setItemBonuses) {
 		int itemSetHash = hash(setItem.itemSetName);
 		setItemsSQL << "INSERT INTO itemSetBonus VALUES (" << itemSetHash <<
-		", " << setItem.fileID <<
+		//", " << setItem.fileID <<
 		", \"" << setItem.itemSetName <<
 		"\", " << setItem.parentHash <<
 		", " << setItem.numOfSet << ");" << std::endl;
@@ -898,7 +945,7 @@ void processResults() {
 		for (int i = 0; i < 8; i++) {
 			MPQModCode& modCode = setItem.mods[i];
 			if (modCode.modCode > 0 && modCode.varDataOffset) {
-				ModDataKey key = ((ModDataKey)setItem.fileID) << 32 | modCode.varDataOffset;
+				ModDataKey key = ((ModDataKey) itemSetHash) << 32 | modCode.varDataOffset;
 				
 				Range r = modData[key];
 				setItemModifiersSQL << "INSERT INTO itemSetBonusModifier VALUES(" << itemSetHash <<
@@ -915,7 +962,7 @@ void processResults() {
 	for (auto effect: socketedEffects) {
 		int effectHash = hash(effect.socketedEffectName);
 		socketedEffectsSQL << "INSERT INTO socketedEffect VALUES (" << effectHash <<
-		", " << effect.fileID <<
+		//", " << effect.fileID <<
 		", \"" << effect.socketedEffectName <<
 		"\", " << effect.itemHash <<
 		", " << effect.itemTypeHash << ");" << std::endl;
@@ -923,7 +970,7 @@ void processResults() {
 		for (int i = 0; i < 5; i++) {
 			MPQModCode& modCode = effect.mods[i];
 			if (modCode.modCode > 0 && modCode.varDataOffset) {
-				ModDataKey key = ((ModDataKey)effect.fileID) << 32 | modCode.varDataOffset;
+				ModDataKey key = ((ModDataKey) effectHash) << 32 | modCode.varDataOffset;
 				
 				Range r = modData[key];
 				socketModifiersSQL << "INSERT INTO socketedEffectModifier VALUES(" << effectHash <<
@@ -943,9 +990,7 @@ void processResults() {
 			stringsSQL << "INSERT INTO string VALUES(" << j.first<<
 				", " << i.first <<
 				", \"" << replaceQuotes(strings[0]) <<
-				"\", \"" << replaceQuotes(strings[1]) <<
-				"\", \"" << replaceQuotes(strings[2]) <<
-				"\", \"" << replaceQuotes(strings[3]) << "\");" << std::endl;
+				"\", \"" << replaceQuotes(strings[1]) << "\");" << std::endl;
 			}
 	}
 	
@@ -961,6 +1006,8 @@ int main(int argc, const char * argv[])
 	std::string gams[] = {
 		"GameBalance/SocketedEffects.gam",
 		"GameBalance/AffixList.gam",
+		"GameBalance/1xx_AffixList.gam",
+		"GameBalance/x1_AffixList.gam",
 		"GameBalance/ItemTypes.gam",
 		"GameBalance/Items_Armor.gam",
 		"GameBalance/Items_Legendary_Other.gam",
@@ -973,6 +1020,9 @@ int main(int argc, const char * argv[])
 		"GameBalance/SetItemBonuses.gam"};
 
 	loadModCodesMap("attributes.xml");
+	
+	//processFile("GameBalance/ItemTypes.gam");
+
 	for (auto path: stls) {
 		processFile(path.c_str());
 	}

@@ -1,0 +1,46 @@
+//--------------------------------------
+//--- 010 Editor v5.0 Binary Template
+//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
+
+typedef DWORD Hash;
+typedef DWORD int32_t;
+
+typedef struct MPQHeader {
+	int32_t mpqMagicNumber;
+	int32_t fileTypeId;
+	int32_t unused[2];
+};
+
+typedef struct MPQStlHeader {
+	int32_t stlFileId;	// Stl file Id
+	int32_t unknown1[5];	// always 0x00000000
+	int32_t headerSize;	// size (in bytes) of the StlHeader? (always 0x00000028)
+	int32_t entriesSize;	// size (in bytes) of the StlEntries
+	int32_t unknown2[2];	// always 0x00000000
+};
+
+typedef struct MPQStlEntry {
+	int32_t unknown1[2];	// always 0x00000000
+	int32_t string1offset;	// file offset for string1 (non-NLS key)
+	int32_t string1size;	// size of string1
+	int32_t unknown2[2];	// always 0x00000000
+	int32_t string2offset;	// file offset for string2
+	int32_t string2size;	// size of string2
+	int32_t unknown3[2];	// always 0x00000000
+	int32_t string3offset;	// file offset for string3
+	int32_t string3size;	// size of string3
+	int32_t unknown4[2];	// always 0x00000000
+	int32_t string4offset;	// file offset for string4
+	int32_t string4size;	// size of string4
+	int32_t unknown5;	// always 0xFFFFFFFF
+	int32_t unknown6[3];	// always 0x00000000
+};
+
+MPQHeader header;
+MPQStlHeader stlHeader;
+MPQStlEntry entry[1000];

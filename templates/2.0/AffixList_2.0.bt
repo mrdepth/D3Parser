@@ -1,0 +1,12 @@
+//--------------------------------------
+//--- 010 Editor v5.0 Binary Template
+//
+// File:
+// Author:
+// Revision:
+// Purpose:
+//--------------------------------------
+
+#include "types_2.0.bt"
+
+MPQAffix affix[10000];
